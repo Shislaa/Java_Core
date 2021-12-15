@@ -14,6 +14,7 @@ public class SinhVien {
 	private double sub_1;
 	private double sub_2;
 	private double sub_3;
+	private String Type;
 	
 	public SinhVien() {
 		this.name = "";
@@ -23,7 +24,8 @@ public class SinhVien {
 		this.major = "";
 		this.sub_1 = -1;
 		this.sub_2 = -1;
-		this.sub_3 = -1;		
+		this.sub_3 = -1;	
+		this.Type = "";
 				
 	}
 /**
@@ -40,9 +42,29 @@ public class SinhVien {
 		
 		for(SinhVien sv : svRank) {
 			System.out.println("Student: " + sv.name + " ID: " + sv.studentID + " Average: " + sv.getAVG());
+			sv.certificateType();
 		}
 	}
 	
+	public void certificateType() {
+		if(getAVG() < 5) {
+			this.Type = "Tạch";
+			System.out.println("Kiếm tiền học lại đi bé");
+			System.out.println("Loại tốt nghiệp: " + this.Type);
+		}
+		else if(getAVG() > 5 && getAVG() < 7) {
+			this.Type = "Khớ đó";
+			System.out.println("Loại tốt nghiệp: " + this.Type);
+		}
+		else if(getAVG() > 7 && getAVG() < 8) {
+			this.Type = "Rỏi";
+			System.out.println("Loại tốt nghiệp: " + this.Type);
+		}
+		else if(getAVG() > 8 && getAVG() <= 10){
+			this.Type = "Xức Xắc";
+			System.out.println("Loại tốt nghiệp: " + this.Type);
+		}
+	}
 	public String getSex() {
 		return Sex;
 	}
